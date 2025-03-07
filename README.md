@@ -1,51 +1,88 @@
-# KOLBOP  
+# HAI_Bot
+
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Django](https://img.shields.io/badge/Django-3.x-brightgreen)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
-![SQLite](https://img.shields.io/badge/SQLite-3.x-green)
-![GitHub](https://img.shields.io/badge/GitHub-Repo-blue)
-![PyQt5](https://img.shields.io/badge/PyQt-5.x-yellow)
-![HTML](https://img.shields.io/badge/HTML-5-red)
-![CSS](https://img.shields.io/badge/CSS-3-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-4.x-purple)
 
-**Advanced Accounting Software for All Businesses**  
+HAI_Bot is a Python library that allows you to create a custom AI assistant to help with various tasks. You can train the AI with your own data to improve its performance.
 
-KOLBOP is a powerful, AI-driven accounting software designed for businesses of all sizes. With advanced features like automated bookkeeping, financial reporting, and AI-powered insights, it helps streamline your accounting process efficiently.  
+## Features
+- Trainable with custom data
+- Natural Language Processing (NLP) for better interactions
+- Customizable model based on user needs
 
-## 🚀 Features  
-✔️ Smart financial tracking and reporting  
-✔️ AI-powered chatbot for financial assistance  
-✔️ Multi-user and role-based access  
-✔️ Secure cloud-based backup and data encryption  
-✔️ Customizable invoices, reports, and dashboards  
+## Installation
 
-## 📌 Installation  
-### Requirements:  
-- Python 3.9+  
-- Django 4+  
-- TensorFlow (for AI-powered features)  
-- PostgreSQL or SQLite for database  
-### Steps to Run:  
-```sh
-git clone https://github.com/HDAI654/KOLBOP.git  
-cd KOLBOP  
-pip install -r requirements.txt
-python NET_PRJ\manage.py migrate  
-python NET_PRJ\manage.py runserver  
-python Run.py
+To install this library, use pip:
+
+```bash
+pip install HAI_Bot
 ```
-### Run Automaticly
-To run the project code, execute this file:
-**`RunCodeProject.vbs`**
 
-### Also you can read [HELP](HELP.md) to know more about the project
+or you can install library from existing .gz file.
+```bash
+pip install hai_bot-0.5.tar.gz
+```
 
 
-## 📜 License
+
+
+## Usage
+
+### Basic Example
+```python
+from HAI_Bot import HAI_model
+n = HAI_model("NLP_Data.json", "chatbot_model.h5")
+
+while True:
+  m = str(input("TEXT ==>  ")).lower()
+  if m == 'quit':
+    break
+  print(n.Chat(m))
+```
+
+### Using Test Data
+The `Test` folder contains sample training data and test scripts:
+- `chatbot_model.h5`: A pre-trained model for quick testing.
+- `NLP_Data.json`: A structured dataset used for training.
+- `Test.py`: A script demonstrating how to use the chatbot.
+
+To test the chatbot using existing data:
+```bash
+python Test/Test.py
+```
+
+## Training Data Format
+For effective learning, the training data should be in JSON format with structured intents. Example:
+
+```json
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hello", "Hi", "Hey"],
+      "responses": ["Hello! How can I assist you?", "Hi there!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you", "Goodbye"],
+      "responses": ["Goodbye! Have a great day!", "See you soon!"]
+    }
+  ]
+}
+```
+
+Ensure your data follows this structure for optimal performance.
+
+## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 📬 Support
-For any issues, feel free to open an issue on GitHub or contact us at hdai.code@gmail.com.
+## Contributing
+
+We welcome contributions! To contribute:
+1. Fork the repository.
+2. Make your changes.
+3. Submit a Pull Request.
+
+## Contact
+For questions or suggestions, reach out via email or open an issue on GitHub.
