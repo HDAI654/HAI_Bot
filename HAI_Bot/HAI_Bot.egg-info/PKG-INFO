@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: HAI_Bot
+Version: 0.5
+Summary: A Python package for creating ChatBot with your own data
+Home-page: https://github.com/HDAI654/HAI_Bot
+Author: Hamed Amiri
+Author-email: your.email@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: keras
+Requires-Dist: numpy
+
+# HAI_Bot
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+HAI_Bot is a Python library that allows you to create a custom AI assistant to help with various tasks. You can train the AI with your own data to improve its performance.
+
+## Features
+- Trainable with custom data
+- Natural Language Processing (NLP) for better interactions
+- Customizable model based on user needs
+
+## Installation
+
+To install this library, use pip:
+
+```bash
+pip install HAI_Bot
+```
+
+or you can install library from existing .gz file.
+```bash
+pip install hai_bot-0.5.tar.gz
+```
+
+## Usage
+
+### Basic Example
+```python
+from HAI_Bot import HAI_model
+n = HAI_model("NLP_Data.json", "chatbot_model.h5")
+
+while True:
+  m = str(input("TEXT ==>  ")).lower()
+  if m == 'quit':
+    break
+  print(n.Chat(m))
+```
+
+## Training Data Format
+For effective learning, the training data should be in JSON format with structured intents. Example:
+
+```json
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hello", "Hi", "Hey"],
+      "responses": ["Hello! How can I assist you?", "Hi there!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you", "Goodbye"],
+      "responses": ["Goodbye! Have a great day!", "See you soon!"]
+    }
+  ]
+}
+```

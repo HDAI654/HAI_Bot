@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+HAI_Bot/ChatBot.py
+HAI_Bot/ChatBot.pyi
+HAI_Bot/__init__.py
+HAI_Bot.egg-info/PKG-INFO
+HAI_Bot.egg-info/SOURCES.txt
+HAI_Bot.egg-info/dependency_links.txt
+HAI_Bot.egg-info/requires.txt
+HAI_Bot.egg-info/top_level.txt
